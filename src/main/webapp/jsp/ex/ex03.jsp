@@ -17,10 +17,19 @@
 	
 		// 셀렉트 박스 파라미터
 		String fruit = request.getParameter("fruit");
+
+		// 체크박스 파라미터
+		String[] foodArray = request.getParameterValues("food");
+		
+		String foodListString = "";
+		for(int i = 0; i < foodArray.length; i++){
+			foodListString += foodArray[i] + " ";
+		}
 	%>
 	
 	<h3><%= ninkname %></h3>
 	<h3><%= animal %></h3>
 	<h3><%= fruit %></h3>
+	<h3><%= foodListString %></h3>
 </body>
 </html>
