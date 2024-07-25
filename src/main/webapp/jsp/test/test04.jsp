@@ -25,7 +25,7 @@
 	}else if(sign.equals("X")){
 		result = number1 * number2;
 	}else if(sign.equals("/")){
-		result = number1 / number2;
+		result = number1 / (double)number2;
 	}
 	
 %>
