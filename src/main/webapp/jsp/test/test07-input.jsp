@@ -1,45 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="java.util.Arrays"%>
-<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>품목</title>
+<title>메뉴 검색</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
 	crossorigin="anonymous">
 </head>
 <body>
-	<%
-		List<String> goodsList = Arrays.asList(new String[]{ 
-		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
-		});
-	
-		
-	%>
-	<div class="container">
-		<h1 class="text-center">장목록</h1>
-		<table class="table text-center">
-			<thead>
-				<tr>
-					<td>번호</td>
-					<td>품목</td>
-				</tr>
-			</thead>
-			<tbody>
-			<%for(int i = 0; i < goodsList.size(); i++ ){  %>
-				<tr>
-					<td><%= i + 1 %></td>
-					<td><%= goodsList.get(i) %></td>
-				</tr>
-			<% } %>
-			</tbody>
-		</table>
-	</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+
+<div class="container">
+	<h1 class="text-center">메뉴 검색</h1>
+	<form method="get" action="/jsp/test/test07.jsp">
+		<div class="d-flex align-items-end">
+			<input class="form-control col-3" type="text" name="menu">
+			<label class="mx-2"><input class="mr-2" type="checkbox" name="point">4점 이하 제외</label>
+			<button class="btn btn-success" type="submit">검색</button>
+		</div>
+	</form>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
