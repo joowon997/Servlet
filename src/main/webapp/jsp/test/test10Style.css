@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#warp{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.top{
+	height: 100px;
+}	
+
+.logo{
+	width: 150px;
+}
+
+.search{
+	width: 1050px;
+}
+
+header > .menu{
+	height: 50px;
+}
+
+.contents > .info{
+	height: 300px;
+}
+
+footer{
+	height: 100px;
+}
