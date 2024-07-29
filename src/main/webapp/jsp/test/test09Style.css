@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+#warp{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+header > .logo{
+	height:	100px;
+}
+
+header > .menu{
+	height: 40px;
+}
+
+footer{
+	height: 100px;
+}
