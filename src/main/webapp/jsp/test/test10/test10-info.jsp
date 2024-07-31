@@ -17,15 +17,6 @@
 </head>
 <body>
 	<%
-// 아티스트 정보 
-
-    Map<String, Object> artistInfo = new HashMap<>();
-    artistInfo.put("name", "아이유");
-    artistInfo.put("debute", 2008);
-    artistInfo.put("agency", "EDAM엔터테인먼트");
-    artistInfo.put("photo", "https://musicmeta-phinf.pstatic.net/artist/000/112/112579.jpg?type=ff300_300");
-
-
 // 아이유 노래 리스트 
     List<Map<String, Object>> musicList = new ArrayList<>();
 
@@ -109,13 +100,15 @@
 	<div id="warp">
 		<header>
 			<div class="top d-flex align-items-center">
-				<h2 class="logo">melong</h2>
-				<div class="search input-group col-5">
-					<input class="form-control" type="text" name="searchText">
-					<div class="input-group-append">
-						<button class="btn btn-success" type="button">검색</button>
+				<h2 class="logo text-success">melong</h2>
+				<form method="get" action="/jsp/test/test10/test10-info.jsp">
+					<div class="search input-group col-5">
+						<input class="form-control" type="text" name="search">
+						<div class="input-group-append">
+							<button class="btn btn-success" type="submit">검색</button>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 			<nav class="menu d-flex justify-content-start">
 				<ul class="nav nav-fill col-5 ">

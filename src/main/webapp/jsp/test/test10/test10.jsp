@@ -100,7 +100,7 @@
 		<header>
 			<div class="top d-flex align-items-center">
 				<h2 class="logo text-success">melong</h2>
-					<form method="get" action="/jsp/test/test10-info.jsp">
+					<form method="get" action="/jsp/test/test10/test10-info.jsp">
 						<div class="search input-group col-5">
 						<input class="form-control" type="text" name="search">
 						<div class="input-group-append">	
@@ -144,7 +144,7 @@
 						<%for(Map<String, Object> music : musicList){ %>	
 							<tr>
 								<td><%= music.get("id") %></td>
-								<td><a href="/jsp/test/test10-info.jsp?id=<%= music.get("id") %>"><%= music.get("title") %></a></td>
+								<td><a href="/jsp/test/test10/test10-info.jsp?id=<%= music.get("id") %>"><%= music.get("title") %></a></td>
 								<td><%= music.get("album") %></td>
 							</tr>
 						<%} %>
