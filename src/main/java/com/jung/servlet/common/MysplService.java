@@ -3,8 +3,13 @@ package com.jung.servlet.common;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.mysql.cj.x.protobuf.MysqlxCrud.Update;
 
@@ -47,11 +52,38 @@ public class MysplService {
 	}
 	
 	//select 쿼리 수행
-	public ResultSet select(String query){
+	public List<Map<String, Object>> select(String query){
 		
 		try {
 			Statement statement = connection.createStatement();
-			return statement.executeQuery(query);
+			ResultSet resultSet = statement.executeQuery(query);
+			
+			List<Map<String, Object>> resultList = new ArrayList<>();
+			
+			ResultSetMetaData rsmd = resultSet.getMetaData();
+			int columnCount = rsmd.getColumnCount();
+
+			List<String> columnNames = new ArrayList<>();
+			
+			for (int i = 1; i <= columnCount; i++) {
+				columnNames.add(rsmd.getColumnName(i));
+			}
+			
+			while (resultSet.next()) {
+				Map<String, Object> resultMap = new HashMap<>();
+				
+				// 컬럼 이름을 통해 하나씩 얻어 와서
+				// 한 행의 정보를 걸럼 단위로 맵에 추가
+				for(String name:columnNames) {
+					Object value = resultSet.getObject(name);
+				
+					resultMap.put(name, value);
+				}
+				
+				resultList.add(resultMap);
+			}
+			
+			return resultList;
 		} catch (Exception e) {
 			return null;
 		}
