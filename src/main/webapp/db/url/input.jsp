@@ -21,7 +21,12 @@
 			<input class="form-control col-4" type="text" name="name">
 			<div>사이트 주소:</div>
 			<input class="form-control col-6" type="text" name="link">
-			<button class="btn btn-success" type="submit">추가</button>
+			<div class="col-6 p-0 mt-3">	
+				<div class="d-flex justify-content-between">
+					<a class="btn btn-success" href="/db/url/list.jsp" >리스트 보기</a>
+					<button class="btn btn-success" type="submit">추가</button>
+				</div>
+			</div>
 		</form>
 	</div>
 	

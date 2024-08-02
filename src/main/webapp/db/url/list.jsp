@@ -22,22 +22,31 @@
 	%>
 
 	<div class="container">
+	<form method="get" action="/db/url/insert">
 		<table class="table text-center">
 			<thead class="font-weight-bold">
 				<tr>
 					<td>사이트</td>
 					<td>사이트 주소</td>
+					<td>사이트 삭제</td>
 				</tr>
 			</thead>
 			<tbody>
 				<%for(Map<String, Object> urlMap:urlList){ %>
 					<tr>
-						<td><%= urlMap.get("name") %></td>
+						<td><%= urlMap.get("name") %></span></td>
 						<td><a href="<%=urlMap.get("link") %>"><%=urlMap.get("link") %></a></td> 
+						<td><input type="checkbox" name="select" value="<%= urlMap.get("id") %>"></td>
 					</tr>
 				<%}%>
 			</tbody>
 		</table>
+			<div class="d-flex justify-content-end">
+				<a class="btn btn-success" href="/db/url/input.jsp">사이트 추가</a>
+				<button class="btn btn-success ml-3" type="submit">삭제</button>
+			</div>
+		</form>
+		
 	</div>	
 	
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
