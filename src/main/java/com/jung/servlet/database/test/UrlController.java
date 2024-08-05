@@ -53,7 +53,6 @@ public class UrlController extends HttpServlet{
 			
 		}
 
-		
 		response.sendRedirect("/db/url/list.jsp");
 		
 	}
